@@ -2,13 +2,16 @@ package org.esaip.evalutation;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
 
-public class HelloController {
+public class HelloController implements Initializable {
     @FXML
     private Label welcomeText;
     @FXML
@@ -51,8 +54,9 @@ public class HelloController {
         if (HelloApplication.getOnEmploye() > 1) {
             HelloApplication.setOnEmploye(HelloApplication.getOnEmploye() - 1);
         }
-        welcomeText.setText("Fiche employé : " +HelloApplication.getOnEmploye() + "/"+HelloApplication.getMasse().size());
+        welcomeText.setText("Fiche employé : " + HelloApplication.getOnEmploye() + "/"+HelloApplication.getMasse().size());
     }
+
     private void afficherEmployeDansTextField() {
         if (HelloApplication.getOnEmploye() <= HelloApplication.getMasse().size()) {
             Employe employe = HelloApplication.getMasse().get(HelloApplication.getOnEmploye());
@@ -60,5 +64,10 @@ public class HelloController {
             inputPrenom.setText(employe.getPrenom());
             inputDatenaiss.setText(String.valueOf(employe.getDateNaissance()));
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        afficherEmployeDansTextField();
     }
 }
