@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="381.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.esaip.evalutation.HelloController">
+   <MenuBar centerShape="false" nodeOrientation="LEFT_TO_RIGHT" scaleShape="false">
+     <menus>
+       <Menu mnemonicParsing="false" text="Fichier">
+         <items>
+           <MenuItem mnemonicParsing="false" onAction="#ActionMenuClose" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Opérations">
+         <items>
+               <MenuItem mnemonicParsing="false" text="Details" />
+               <SeparatorMenuItem mnemonicParsing="false" />
+           <MenuItem mnemonicParsing="false" text="Effacer" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="?">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+   <BorderPane prefHeight="360.0" prefWidth="600.0">
+      <center>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+               <TextField id="prenom_id" layoutX="194.0" layoutY="90.0" promptText="Prénom">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </TextField>
+               <TextField id="nom_id" layoutX="194.0" layoutY="131.0" promptText="Nom">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </TextField>
+                <Button layoutX="306.0" layoutY="252.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="85.0" text="Suivante" />
+               <Button layoutX="168.0" layoutY="250.0" mnemonicParsing="false" onAction="#onPrecedente" prefHeight="25.0" prefWidth="85.0" text="Précédente" />
+               <TextField id="datenaiss_id" layoutX="194.0" layoutY="169.0" promptText="Date de naissance">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </TextField>
+            </children>
+         </AnchorPane>
+      </center>
+   </BorderPane>
+
+    <Label fx:id="welcomeText" prefHeight="4.0" prefWidth="561.0" />
+</VBox>
