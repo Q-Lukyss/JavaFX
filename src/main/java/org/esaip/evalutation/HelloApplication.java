@@ -1,12 +1,20 @@
 package org.esaip.evalutation;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.util.Date;
 import java.util.LinkedList;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
+
 
 public class HelloApplication extends Application {
      private static LinkedList<Employe> masse = new LinkedList<>();
@@ -21,6 +29,8 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+        System.out.println(onEmploye);
+        System.out.println(masse.size());
     }
 
     public static void main(String[] args) {
@@ -32,9 +42,9 @@ public class HelloApplication extends Application {
                 ObjectOutputStream oos;
                 oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("/home/lukyss/Documents/datas.wap")));
                 for (int a = 0; a < 10; a++) {
-                    Employe e=new Employe("Doe", "John");
+                    Employe e=new Employe("Doe", "John", LocalDate.of(1995, 5, 16));
                     masse.add(e);
-                    //masse.get(a).afficher();
+                    masse.get(a).afficher();
                     oos.writeObject(e);
                 }
                 oos.writeObject(masse);
@@ -49,7 +59,7 @@ public class HelloApplication extends Application {
                 for (int a = 0; a < 10; a++) {
                     Employe e = (Employe) fich.readObject();
                     masse.add(e);
-                  //  masse.get(a).afficher();
+                    masse.get(a).afficher();
                 }
                 fich.close();
             } catch (IOException | ClassNotFoundException e1) {

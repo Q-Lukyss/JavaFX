@@ -1,14 +1,16 @@
 package org.esaip.evalutation;
 
+import java.time.LocalDate;
 import java.util.Random;
 
 public class Employe extends Personne{
     private int salaire;
 
-    Employe(String nom,String prenom)
+    Employe(String nom, String prenom, LocalDate datenaiss)
     {
         setNom(nom);
         setPrenom(prenom);
+        setDateNaissance(datenaiss);
         Random random = new Random();
         int nb;
         nb = 1000+random.nextInt(500);

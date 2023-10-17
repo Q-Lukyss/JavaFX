@@ -30,19 +30,19 @@
       <center>
          <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-               <TextField id="prenom_id" layoutX="194.0" layoutY="90.0" promptText="Prénom">
+               <TextField id="prenom_id" fx:id="inputPrenom" layoutX="194.0" layoutY="90.0" promptText="Prénom">
                   <font>
                      <Font size="14.0" />
                   </font>
                </TextField>
-               <TextField id="nom_id" layoutX="194.0" layoutY="131.0" promptText="Nom">
+               <TextField id="nom_id" fx:id="inputNom" layoutX="194.0" layoutY="131.0" promptText="Nom">
                   <font>
                      <Font size="14.0" />
                   </font>
                </TextField>
                 <Button layoutX="306.0" layoutY="252.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="85.0" text="Suivante" />
                <Button layoutX="168.0" layoutY="250.0" mnemonicParsing="false" onAction="#onPrecedente" prefHeight="25.0" prefWidth="85.0" text="Précédente" />
-               <TextField id="datenaiss_id" layoutX="194.0" layoutY="169.0" promptText="Date de naissance">
+               <TextField id="datenaiss_id" fx:id="inputDatenaiss" accessibleRole="DATE_PICKER" layoutX="194.0" layoutY="169.0" promptText="Date de naissance">
                   <font>
                      <Font size="14.0" />
                   </font>

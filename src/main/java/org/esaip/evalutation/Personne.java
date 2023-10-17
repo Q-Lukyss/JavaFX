@@ -1,14 +1,14 @@
 package org.esaip.evalutation;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Personne implements Serializable {
 
 
     private  String prenom;
     private  String nom;
-    private Date dateNaissance;
+    private LocalDate dateNaissance;
 
     public String getPrenom() {
         return prenom;
@@ -26,11 +26,11 @@ public class Personne implements Serializable {
         this.nom = nom;
     }
 
-    public Date getDateNaissance() {
+    public LocalDate getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(LocalDate dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
